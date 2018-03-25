@@ -1,0 +1,16 @@
+#PBS -N DPED
+#PBS -o /ghome/huangjie/DPED/DPED.out
+#PBS -e /ghome/huangjie/DPED/DPED.err
+#PBS -l nodes=1:gpus=1:S
+#PBS -r y
+cd $PBS_O_WORKDIR
+echo Time is `date`
+echo Directory is $PWD
+echo This job runs on following nodes:
+cat $PBS_NODEFILE
+cat $PBS_GPUFILE
+startdocker -D /gdata/huangjie/DPED -P /ghome/huangjie/DPED -s "python /ghome/huangjie/DPED/train_model.py" bit:5000/deepo
+
+
+
+
