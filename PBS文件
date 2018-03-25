@@ -10,7 +10,3 @@ echo This job runs on following nodes:
 cat $PBS_NODEFILE
 cat $PBS_GPUFILE
 startdocker -D /gdata/huangjie/DPED -P /ghome/huangjie/DPED -s "python /ghome/huangjie/DPED/train_model.py" bit:5000/deepo
-
-
-
-
